@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #07101d;
+}
+html { scroll-behavior: smooth; }
+body { margin: 0; min-width: 320px; overflow-x: hidden; background: #07101d; }
+* { box-sizing: border-box; }
+::selection { background: rgba(56, 189, 248, .25); }
+
+.section-shell { @apply border-t border-white/[0.07] bg-slate-950; }
+.section-wrap { @apply mx-auto max-w-6xl px-5 py-24 lg:px-8 lg:py-28; }
+
+.nav-link {
+  @apply relative rounded-xl px-3 py-2 text-sm text-slate-400 transition hover:bg-white/5 hover:text-white;
+}
+.nav-active { @apply bg-white/5 text-sky-300; }
+
+.icon-button {
+  @apply grid h-9 w-9 place-items-center rounded-xl border border-white/10 text-slate-300 transition hover:border-sky-400/30 hover:bg-white/5 hover:text-white;
+}
+
+.eyebrow {
+  @apply text-[11px] font-semibold tracking-[0.2em] text-sky-300;
+}
+.text-gradient {
+  background: linear-gradient(100deg, #f8fafc 0%, #7dd3fc 55%, #22d3ee 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.hero-grid {
+  background-image: linear-gradient(rgba(148,163,184,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(148,163,184,.05) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(circle at 65% 30%, black, transparent 72%);
+}
+.terminal-card {
+  @apply overflow-hidden rounded-3xl border border-white/10 bg-slate-900/70 shadow-soft backdrop-blur;
+  box-shadow: 0 24px 80px rgba(0,0,0,.28);
+}
+.terminal-top { @apply flex items-center gap-1.5 border-b border-white/10 bg-white/[0.025] px-5 py-4; }
+.terminal-top > span { @apply h-2.5 w-2.5 rounded-full bg-white/10; }
+.status-dot { @apply h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_14px_rgba(52,211,153,.6)]; }
+
+.primary-button {
+  @apply inline-flex items-center gap-2 rounded-xl bg-white px-4 py-3 text-sm font-semibold text-slate-950 transition hover:-translate-y-0.5 hover:bg-sky-100 focus:outline-none focus:ring-2 focus:ring-sky-400/60;
+}
+.secondary-button {
+  @apply inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/[0.025] px-4 py-3 text-sm font-medium text-slate-200 transition hover:-translate-y-0.5 hover:border-sky-400/30 hover:bg-white/5 focus:outline-none focus:ring-2 focus:ring-sky-400/60;
+}
+.social-pill {
+  @apply inline-flex items-center gap-2 rounded-full border border-white/10 px-3.5 py-2 text-xs font-medium text-slate-400 transition hover:border-sky-400/30 hover:bg-sky-400/5 hover:text-sky-300;
+}
+.prose-copy { @apply max-w-2xl text-base leading-8 text-slate-400; }
+.chip { @apply inline-flex rounded-full border border-white/10 bg-white/[0.025] px-3 py-1.5 text-xs text-slate-300; }
+
+.timeline-item { @apply relative pl-0 lg:pl-8; }
+.timeline-dot {
+  @apply absolute left-0 top-8 hidden h-3 w-3 rounded-full border-2 border-slate-950 bg-sky-400 shadow-[0_0_0_4px_rgba(56,189,248,.1)] lg:block;
+}
+.timeline-item::before {
+  content: "";
+  @apply absolute left-[5px] top-12 hidden h-[calc(100%+2rem)] w-px bg-white/10 lg:block;
+}
+.timeline-item:last-child::before { display: none; }
+
+.skill-card {
+  @apply rounded-3xl border border-white/10 bg-white/[0.025] p-6 transition duration-300 hover:-translate-y-1 hover:border-sky-400/20 hover:bg-white/[0.04];
+}
+.skill-icon { @apply grid h-9 w-9 place-items-center rounded-xl bg-sky-400/10 text-sky-300; }
+.skill-chip {
+  @apply inline-flex rounded-lg border border-white/10 px-2.5 py-1.5 text-xs text-slate-400 transition hover:border-sky-400/25 hover:text-sky-300;
+}
+
+.project-card {
+  @apply rounded-3xl border border-white/10 bg-white/[0.025] p-6 transition duration-300 hover:-translate-y-1 hover:border-sky-400/20 hover:bg-white/[0.04] sm:p-8;
+}
+.featured-project {
+  @apply border-sky-400/15 bg-gradient-to-br from-sky-400/[0.045] to-transparent;
+}
+.project-number { @apply font-mono text-sm text-sky-300; }
+
+.contact-panel {
+  @apply grid gap-8 rounded-[2rem] border border-white/10 bg-gradient-to-br from-white/[0.045] to-transparent p-6 sm:p-8 lg:grid-cols-[.85fr_1.15fr] lg:p-10;
+}
+.field { @apply grid gap-2 text-xs font-medium text-slate-400; }
+.field input, .field textarea {
+  @apply w-full rounded-xl border border-white/10 bg-white/[0.025] px-4 py-3 text-sm text-white outline-none placeholder:text-slate-600 transition focus:border-sky-400/50 focus:ring-2 focus:ring-sky-400/10;
+}
+.field textarea { resize: vertical; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+}
