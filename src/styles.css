@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  color-scheme: dark;
+  color-scheme:light dark;
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   background: #07101d;
 }
@@ -217,4 +217,125 @@ body { margin: 0; min-width: 320px; overflow-x: hidden; background: #07101d; }
   .profile-orbit-dot {
     animation: none;
   }
+}
+
+/* =========================================
+   Light Theme
+   ========================================= */
+
+html:not(.dark) {
+  color-scheme: light;
+  background: #f8fafc;
+  color: #0f172a;
+}
+
+html:not(.dark) body {
+  background: #f8fafc;
+  color: #0f172a;
+}
+
+/* Main dark backgrounds */
+html:not(.dark) .bg-slate-950 {
+  background-color: #f8fafc !important;
+}
+
+html:not(.dark) .bg-slate-900 {
+  background-color: #ffffff !important;
+}
+
+/* Text */
+html:not(.dark) .text-slate-100 {
+  color: #0f172a !important;
+}
+
+html:not(.dark) .text-slate-200 {
+  color: #1e293b !important;
+}
+
+html:not(.dark) .text-slate-300 {
+  color: #334155 !important;
+}
+
+html:not(.dark) .text-slate-400 {
+  color: #475569 !important;
+}
+
+html:not(.dark) .text-slate-500 {
+  color: #64748b !important;
+}
+
+html:not(.dark) .text-slate-600 {
+  color: #64748b !important;
+}
+
+/* Borders */
+html:not(.dark) .border-white\/10 {
+  border-color: rgba(15, 23, 42, 0.12) !important;
+}
+
+/* Cards / glass panels */
+html:not(.dark) .bg-white\/\[0\.025\] {
+  background-color: rgba(15, 23, 42, 0.025) !important;
+}
+
+html:not(.dark) .bg-white\/\[0\.03\] {
+  background-color: rgba(15, 23, 42, 0.035) !important;
+}
+
+html:not(.dark) .bg-white\/\[0\.05\] {
+  background-color: rgba(15, 23, 42, 0.05) !important;
+}
+
+/* Navbar */
+html:not(.dark) nav {
+  background-color: rgba(255, 255, 255, 0.82) !important;
+  border-color: rgba(15, 23, 42, 0.1) !important;
+}
+
+/* Terminal / glass card */
+html:not(.dark) .terminal-card {
+  background: rgba(255, 255, 255, 0.88);
+  color: #0f172a;
+  border-color: rgba(15, 23, 42, 0.12);
+}
+
+/* Inputs */
+html:not(.dark) input,
+html:not(.dark) textarea {
+  background-color: #ffffff;
+  color: #0f172a;
+  border-color: rgba(15, 23, 42, 0.15);
+}
+
+html:not(.dark) input::placeholder,
+html:not(.dark) textarea::placeholder {
+  color: #94a3b8;
+}
+
+/* Light mode hero name */
+html:not(.dark) .text-gradient {
+  background: linear-gradient(
+    90deg,
+    #0284c7 0%,
+    #0ea5e9 45%,
+    #2563eb 100%
+  );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/* Light mode social links */
+html:not(.dark) .social-pill,
+html:not(.dark) .social-pill span,
+html:not(.dark) .social-pill svg {
+  color: #000000 !important;
+}
+
+html:not(.dark) .social-pill:hover,
+html:not(.dark) .social-pill:hover span,
+html:not(.dark) .social-pill:hover svg {
+  color: #000000 !important;
 }

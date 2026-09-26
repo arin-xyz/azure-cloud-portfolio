@@ -455,9 +455,9 @@ function Footer() {
           <p className="mt-1">Azure Cloud • Identity • Endpoint Management</p>
         </div>
         <div className="flex items-center gap-4">
-          <a href={portfolio.links.github} className="hover:text-white">GitHub</a>
-          <a href={portfolio.links.linkedin} className="hover:text-white">LinkedIn</a>
-          <a href={portfolio.links.email} className="hover:text-white">Email</a>
+          <a href={portfolio.links.github} className="hover:text-black dark:hover:text-white">GitHub</a>
+<a href={portfolio.links.linkedin} className="hover:text-black dark:hover:text-white">LinkedIn</a>
+<a href={portfolio.links.email} className="hover:text-black dark:hover:text-white">Email</a>
           <a href="#home" className="icon-button" aria-label="Back to top"><ChevronDown className="rotate-180" size={17} /></a>
         </div>
       </div>
@@ -475,7 +475,17 @@ function SectionHeading({ eyebrow, title }: { eyebrow: string; title: string }) 
 }
 
 function Social({ href, label, icon }: any) {
-  return <a className="social-pill" href={href} target={href.startsWith("mailto:") ? undefined : "_blank"} rel="noreferrer">{icon}<span>{label}</span></a>;
+  return (
+    <a
+      className="social-pill !text-black hover:!text-white dark:!text-slate-300 dark:hover:!text-white"
+      href={href}
+      target={href.startsWith("mailto:") ? undefined : "_blank"}
+      rel="noreferrer"
+    >
+      {icon}
+      <span>{label}</span>
+    </a>
+  );
 }
 function ProjectLink({ href, label, icon }: any) {
   const disabled = href === "#";
