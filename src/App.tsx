@@ -158,7 +158,7 @@ function Navbar({ active, menuOpen, setMenuOpen, dark, setDark, nav }: any) {
 
 function Hero() {
   return (
-    <section id="home" className="relative isolate overflow-hidden">
+    <section id="home" className="relative z-10 isolate overflow-visible">
       <div className="hero-grid absolute inset-0 -z-10 opacity-70" />
       <div className="hero-orb absolute left-[55%] top-24 -z-10 h-72 w-72 rounded-full bg-sky-500/10 blur-3xl" />
       <div className="mx-auto grid min-h-[760px] max-w-6xl items-center gap-14 px-5 pb-20 pt-36 lg:grid-cols-[1.1fr_.9fr] lg:px-8">
@@ -188,37 +188,46 @@ function Hero() {
         </Reveal>
 
         <Reveal delay={0.08}>
-          <div className="relative">
-            <div className="terminal-card">
-              <div className="terminal-top">
-                <span /><span /><span />
-                <div className="ml-auto font-mono text-[10px] text-slate-600">cloud-ops</div>
-              </div>
-              <div className="p-6 font-mono text-sm leading-7 sm:p-8">
-                <div className="text-slate-500">$ whoami</div>
-                <div className="mt-1 text-sky-300">azure-cloud-operator</div>
-                <div className="mt-5 text-slate-500">$ focus --current</div>
-                <div className="mt-1 grid gap-1 text-slate-300">
-                  <span><b className="text-cyan-300">01</b> Azure infrastructure</span>
-                  <span><b className="text-cyan-300">02</b> Identity & endpoint</span>
-                  <span><b className="text-cyan-300">03</b> PowerShell automation</span>
-                  <span><b className="text-cyan-300">04</b> Cloud operations</span>
-                </div>
-                <div className="mt-5 text-slate-500">$ status</div>
-                <div className="mt-1 flex items-center gap-2 text-emerald-300"><span className="status-dot" /> operational mindset</div>
-              </div>
-            </div>
-            <div className="absolute -bottom-5 -left-4 hidden rounded-2xl border border-white/10 bg-slate-900/90 px-4 py-3 shadow-xl backdrop-blur md:block">
-              <div className="flex items-center gap-3">
-                <ShieldCheck className="text-sky-300" size={20} />
-                <div>
-                  <p className="text-xs text-slate-500">Core discipline</p>
-                  <p className="text-sm font-medium">Reliable operations</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </Reveal>
+  <div className="relative flex min-h-[620px] items-center justify-center">
+
+    {/* Animated profile photo */}
+    <div className="profile-orbit absolute h-[340px] w-[340px] sm:h-[390px] sm:w-[390px]">
+
+      {/* Rotating outer ring */}
+      <div className="profile-ring absolute inset-0 rounded-full" />
+
+      {/* Inner glow */}
+      <div className="profile-glow absolute inset-5 rounded-full" />
+
+      {/* Photo container */}
+      <div className="profile-photo-wrapper absolute inset-8 overflow-hidden rounded-full border border-white/10 bg-slate-950 shadow-2xl">
+        <img
+          src="/profile.jpg"
+          alt="Arin Kumar"
+          className="h-full w-full object-cover object-top"
+        />
+      </div>
+
+      {/* Small orbiting dot */}
+      
+    </div>
+
+    
+    {/* Floating discipline badge */}
+    <div className="absolute bottom-3 left-0 hidden rounded-2xl border border-white/10 bg-slate-900/90 px-4 py-3 shadow-xl backdrop-blur md:block">
+      <div className="flex items-center gap-3">
+        <ShieldCheck className="text-sky-300" size={20} />
+        <div>
+          <p className="text-xs text-slate-500">Core discipline</p>
+          <p className="text-sm font-medium">
+            Reliable operations
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</Reveal>
       </div>
     </section>
   );

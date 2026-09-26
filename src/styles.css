@@ -97,3 +97,124 @@ body { margin: 0; min-width: 320px; overflow-x: hidden; background: #07101d; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
 }
+/* =========================================
+   Animated Profile Photo
+   ========================================= */
+
+.profile-orbit {
+  animation: profileFloat 6s ease-in-out infinite;
+}
+
+.profile-ring {
+  background:
+    conic-gradient(
+      from 0deg,
+      transparent 0deg,
+      transparent 35deg,
+      rgba(56, 189, 248, 0.95) 75deg,
+      rgba(34, 211, 238, 0.95) 120deg,
+      rgba(99, 102, 241, 0.95) 180deg,
+      rgba(168, 85, 247, 0.8) 230deg,
+      transparent 290deg,
+      transparent 360deg
+    );
+
+  animation: profileRotate 5s linear infinite;
+
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+
+  padding: 2px;
+}
+
+.profile-glow {
+  background: radial-gradient(
+    circle,
+    rgba(56, 189, 248, 0.25) 0%,
+    rgba(59, 130, 246, 0.12) 40%,
+    transparent 72%
+  );
+
+  filter: blur(25px);
+  animation: profilePulse 4s ease-in-out infinite;
+}
+
+.profile-photo-wrapper {
+  box-shadow:
+    0 0 45px rgba(56, 189, 248, 0.12),
+    0 0 90px rgba(59, 130, 246, 0.08);
+}
+
+.profile-orbit-dot {
+  position: absolute;
+  top: 4%;
+  left: 50%;
+  width: 9px;
+  height: 9px;
+  border-radius: 9999px;
+  background: rgb(103, 232, 249);
+  box-shadow:
+    0 0 12px rgba(103, 232, 249, 0.9),
+    0 0 25px rgba(56, 189, 248, 0.6);
+
+  transform: translateX(-50%);
+  animation: profileDotRotate 5s linear infinite;
+}
+
+@keyframes profileRotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes profileDotRotate {
+  from {
+    transform: rotate(0deg) translateY(-1px);
+  }
+
+  to {
+    transform: rotate(360deg) translateY(-1px);
+  }
+}
+
+@keyframes profileFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes profilePulse {
+  0%,
+  100% {
+    opacity: 0.55;
+    transform: scale(0.96);
+  }
+
+  50% {
+    opacity: 0.9;
+    transform: scale(1.04);
+  }
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .profile-orbit,
+  .profile-ring,
+  .profile-glow,
+  .profile-orbit-dot {
+    animation: none;
+  }
+}
