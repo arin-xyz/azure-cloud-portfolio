@@ -93,7 +93,7 @@ function Navbar({ active, menuOpen, setMenuOpen, dark, setDark, nav }: any) {
           <span className="grid h-9 w-9 place-items-center rounded-xl border border-sky-400/20 bg-sky-400/10 text-sky-300">
             <CloudCog size={18} />
           </span>
-          <span className="hidden sm:block">[Arin Kumar]</span>
+          <span className="hidden sm:block">Arin Kumar</span>
         </a>
 
         <div className="hidden items-center gap-1 lg:flex">
@@ -166,7 +166,7 @@ function Hero() {
           <div>
             <p className="eyebrow">{portfolio.eyebrow}</p>
             <h1 className="mt-5 max-w-4xl text-5xl font-semibold leading-[1.02] tracking-[-0.045em] sm:text-6xl lg:text-7xl">
-              Hi, I'm <span className="text-gradient">[Arin Kumar]</span>
+              Hi, I'm <span className="text-gradient">Arin Kumar</span>
             </h1>
             <p className="mt-7 max-w-2xl text-xl font-medium text-slate-200 sm:text-2xl">
               {portfolio.headline}
@@ -442,7 +442,7 @@ function Footer() {
     <footer className="border-t border-white/10">
       <div className="mx-auto flex max-w-6xl flex-col gap-4 px-5 py-7 text-sm text-slate-500 sm:flex-row sm:items-center sm:justify-between lg:px-8">
         <div>
-          <p className="text-slate-300">© 2026 [Arin Kumar]</p>
+          <p className="text-slate-300">© 2026 Arin Kumar</p>
           <p className="mt-1">Azure Cloud • Identity • Endpoint Management</p>
         </div>
         <div className="flex items-center gap-4">
